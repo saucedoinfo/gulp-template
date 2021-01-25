@@ -38,5 +38,6 @@
     "url": "https://github.com/DorianDesings/gulp-2020/issues"
   },
   "homepage": "https://github.com/DorianDesings/gulp-2020#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {}
 }

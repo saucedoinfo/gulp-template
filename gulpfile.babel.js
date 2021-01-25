@@ -56,15 +56,15 @@ gulp.task("html-min", () => {
 		.pipe(gulp.dest("./public"));
 });
 
-gulp.task("styles", () => {
-	return gulp
-		.src("./src/css/*.css")
-		.pipe(plumber())
-		.pipe(concat("styles-min.css"))
-		.pipe(postcss(cssPlugins))
-		.pipe(gulp.dest("./public/css"))
-		.pipe(stream());
-});
+// gulp.task("styles", () => {
+// 	return gulp
+// 		.src("./src/css/*.css")
+// 		.pipe(plumber())
+// 		.pipe(concat("styles-min.css"))
+// 		.pipe(postcss(cssPlugins))
+// 		.pipe(gulp.dest("./public/css"))
+// 		.pipe(stream());
+// });
 
 gulp.task("babel", () => {
 	return gulp
@@ -95,13 +95,14 @@ gulp.task("views", () => {
 
 gulp.task("sass", () => {
 	return gulp
-		.src("./src/scss/styles.scss")
+		.src("./src/scss/*.scss")
 		.pipe(plumber())
 		.pipe(
 			sass({
 				outputStyle: "compressed",
 			})
 		)
+		.pipe(concat("styles.css"))
 		.pipe(postcss(cssPlugins))
 		.pipe(gulp.dest("./public/css"))
 		.pipe(stream());
